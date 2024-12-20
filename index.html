@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {background-color: rgb(10, 10, 10);}
+
+
+        @keyframes rotation {
+            0% { transform:rotate(0deg);}
+            100% { transform:rotate(360deg);}
+        }
+
+        .shest {
+            position: absolute;
+            animation-name: rotation;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            transform-origin: center;
+            animation-timing-function: linear;
+            transform-origin: center;
+            transform: translate(0%, -100%);
+            width: 45px;
+            height: 45px;
+            /* right: 0px;
+            left: 0px; */
+            top: 0px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 100px;
+        }
+
+        .prm {
+            z-index: 1;
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            /* background-color: rgb(255, 255, 255); */
+            top: 650px;
+            right: 5px;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            border-radius: 100px;
+        }
+
+
+        .item {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+            color: #FFC9FA;
+        }
+
+        .nav {font-size: 17px; padding-top: 10px;}
+        .txtsmall {font-size: 15px;}
+        .txtbig {font-size: 23px; font-weight: bold;}
+        
+        .txtbig1 {
+            font-size: 33px; 
+            font-weight: bold; 
+            display: flex;
+            justify-content: center;
+        }
+
+        .middletxt {font-size: 17px; font-weight: bold;}
+
+        .backtxt {
+            position: absolute;
+            font-size: 420px;
+            align-items: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: #ddacd897;
+            font-weight: 900;
+            opacity: 20%;
+            padding-top: 0px;
+            z-index: -1;
+            top: 115px;
+        }
+
+        .width {font-weight: bold;}
+
+        .flex-text {
+            display: flex;
+            justify-content: center;
+            padding-top: 200px;
+        }
+
+        .flex-text1 {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            z-index: -1;
+            top: 0px;
+            width: 100%;
+        }
+
+        .flex-conteiner {
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            left: 0px;
+            top: 0px;
+            gap: 100px;
+            height: 75px;
+            font-size: 13px;
+            width: 100%;
+            background-color: rgb(0, 0, 0);
+            z-index: 1;
+            box-shadow: 2px 3px 4px rgba(255, 255, 255, 0.13);
+        }
+
+        .blur4 {
+            background-color: rgba(113, 42, 113, 0.416);
+            z-index: -1;
+            width: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+            height: 50px;
+            filter: blur(50px);
+            display: flex;
+            justify-content: center;
+        }
+
+        .hov:hover {color: #ffb2f7e1;}
+
+        .pos {top: 0px;padding-top: 0px;}
+
+        .navbutton {
+            padding-top: 0px;
+            font-size: 17px;
+            color: rgb(10, 10, 10);
+            background-color: #FFC9FA;
+            top: 25px;
+            width: 120px;
+            height: 25px;
+            position: absolute;
+            text-align: center;
+            border-radius: 100px;
+        }
+
+        .navbutton:hover {background-color: #ffa2f6ec;}
+
+        .animbacktxt {
+        text-transform: uppercase;
+        overflow: hidden;
+        background: linear-gradient(90deg, #000, #fff, #000);
+        background-repeat: no-repeat;
+        background-size: 80%;
+        animation: animate 5s linear infinite;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: #ddacd897;
+        }
+
+        @keyframes animate {
+        0% {
+          background-position: -500%;
+        }
+        100% {
+          background-position: 500%;
+        }
+      }
+
+      .space3 {padding-top: 120px;}
+
+      .flex-container2 {
+        display: flex;
+        position: absolute;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .cont1 {padding-left: 150px;}
+
+      .line {
+        height: 2px;
+        width: 90%;
+        background-color: #FFC9FA99;
+      }
+
+      .brr{
+        width: 550px;
+        height: 30px;
+        text-align: left;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      } 
+
+      .cont {
+        gap: 100%;
+        padding-left: 90px;
+        padding-right: 250px;
+        padding-bottom: 0px;
+        padding-top: 50px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .space4 {padding-top: 200px;}
+
+      .flex-conteiner2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding-top: 20px;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .pad {padding-bottom: 30px;}
+
+        .postxtsmall {
+            display: flex;
+            justify-content: center;
+            padding-top: 20px;
+        }
+
+        .blur1 {
+            background-color: rgba(156, 92, 156, 0.336);
+            z-index: -1;
+            filter: blur(90px);
+            display: flex;
+            justify-content: center;
+            position: absolute;
+        }
+
+        .blurpos1 {
+            top: 2350px;
+            height: 100px;
+            width: 100%;
+        }
+
+        .blurpos2 {
+            top: 3100px;
+            height: 300px;
+            width: 300px;
+            border-radius: 100px;
+        }
+
+        .blurpos1 {
+            top: 4200px;
+            height: 90px;
+            width: 100%;
+        }
+
+        .cont11 {
+            padding-top: 30px;
+            width: 350px;
+            height: 100px;
+            left: 30px;
+            padding-bottom: 50px;
+        }
+        
+        .posmidl {
+            position: absolute;
+            padding-left: 70px;
+        }
+
+        .picmidl {
+            position: absolute;
+            padding-top: 30px;
+        }
+
+        .posmidltxtsmall {
+            padding-left: 70px;
+            padding-top: 50px;
+            width: 300px;
+            height: 100px;
+        }
+
+        .teiner2 {
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+            flex-direction: row;
+        }
+
+        .flex-cont2 {
+            padding-bottom: 120px;
+            padding-top: 20px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 500px;
+            height: 400px;
+            z-index: -1;
+            padding-left: 310px;
+        }
+
+        .possmall {padding-bottom: 25px;}
+        .map {padding-left: 120px;}
+
+        .flex-conteiner3 {
+            display: flex;
+            gap:  20px;
+            justify-content: center;
+        }
+
+        .poslast {
+            padding-left: 10px;
+            padding-top: 12px;
+        }
+
+        .pop2 {padding-right: 50px;}
+        .socialnetwork {padding-top: 20px;}
+        .paddsoc{padding-left: 50px;}
+
+        .flex-conteiner4 {
+            display: flex;
+            gap:  30%;
+            justify-content: center;
+            padding-top: 20px;
+        }
+
+
+
+        @media screen and (max-width: 768px) {
+            body {width: 100%;}
+
+        .nav {font-size: 15px; padding-top: 10px;}
+        .txtsmall {font-size: 13px;}
+        .txtbig {font-size: 20px; font-weight: bold;}
+
+        .txtbig1 {
+            font-size: 27px; 
+            font-weight: bold; 
+            display: flex;
+            justify-content: center;
+        }
+
+        .backtxt {
+            position: absolute;
+            font-size: 220px;
+            align-items: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: #ddacd897;
+            font-weight: 900;
+            opacity: 20%;
+            padding-top: 0px;
+            z-index: -1;
+            top: 165px;
+        }
+
+        img.logo {width: 450px;}
+
+        .flex-conteiner {
+            position: fixed;
+            display: flex;
+            justify-content: start;
+            padding-left: 115px;
+            top: 0px;
+            gap: 50px;
+            height: 75px;
+            font-size: 13px;
+            width: 100%;
+            background-color: rgb(0, 0, 0);
+            z-index: 1;
+            box-shadow: 2px 3px 4px rgba(255, 255, 255, 0.13);
+        }
+
+        .flex-cont2 {
+            padding-bottom: 120px;
+            padding-top: 20px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 500px;
+            height: 400px;
+            z-index: -1;
+            padding-left: 110px;
+        }
+
+        .cont1 {padding-left: 80px;}
+
+        .line {
+        height: 2px;
+        width: 82%;
+        background-color: #FFC9FA99;
+      }
+
+
+      .brr{
+        width: 430px;
+        height: 30px;
+        text-align: left;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      } 
+
+      .cont {
+        gap: 100%;
+        padding-left: 80px;
+        padding-right: 200px;
+        padding-bottom: 0px;
+        padding-top: 50px;
+        display: flex;
+        justify-content: center;
+      }
+
+      img.nailpp {
+        width: 250px;
+        height: 250px;
+      }
+
+      .flex-conteiner2 {
+            display: flex;
+            flex-direction: row;
+            padding-top: 10px;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .teiner2 {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-direction: row;
+        }
+
+        .cont11 {
+            padding-top: 30px;
+            width: 250px;
+            height: 100px;
+            left: 20px;
+            padding-bottom: 50px;
+        }
+
+        .posmidltxtsmall {
+            padding-left: 70px;
+            padding-top: 50px;
+            width: 200px;
+            height: 100px;
+
+        }
+
+        .map {padding-left: 0px;}
+
+        .blurpos2 {
+            top: 2730px;
+            height: 300px;
+            width: 300px;
+            border-radius: 100px;
+        }
+
+
+        .blurpos1 {
+            top: 2090px;
+            height: 90px;
+            width: 100%;
+        }
+
+
+
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="prm">
+    <div class="shest"><img src="./il_fullxfull.1526589968_hn06.png" width="55px"></div>
+</div>    
+
+    <div class="flex-conteiner">
+        <div class="item pos"><p class="txtbig width hov">MLAO</p></div>
+        <div class="item"><p class="nav hov">услуги</p></div>
+        <div class="item"><p class="nav hov">отзывы</p></div>
+        <div class="item"><p class="nav hov">контакты</p></div>
+        <div class="item"><div class="navbutton">записаться</div></div>
+    </div>
+    </div>
+
+    <div class="flex-text"><img class="logo" src="./лого.png" width="800px" height="100%"></a>
+    
+    <div class="backtxt animbacktxt">MLAO</div></div>
+    <div class="blur4"></div>
+
+
+
+     <section class="space3">
+        <div class="item"> 
+        <div class="txtbig1">УСЛУГИ</div>
+
+        <div class="flex-container2"></div>
+        <div class="cont1">
+            <div class="cont">
+            <div class="txtbig ttxbig">Комплекс маникюр</div>
+            <div class="txtbig ">2450</div></div>
+            <div class="txtsmall brr">снятие, аппаратный/комбинированный маникюр, выравнивание базой, покрытие под кутикулу гель-лаком LUXIO</div>
+            <div class="line"></div>
+        </div>
+
+        <div class="cont1">
+            <div class="cont">
+            <div class="txtbig ttxbig">Комплекс маникюр</div>
+            <div class="txtbig ">2450</div></div>
+            <div class="txtsmall brr">снятие, аппаратный/комбинированный маникюр, выравнивание базой, покрытие под кутикулу гель-лаком LUXIO</div>
+            <div class="line"></div>
+        </div>
+
+        <div class="cont1">
+            <div class="cont">
+            <div class="txtbig ttxbig">Комплекс маникюр</div>
+            <div class="txtbig ">2450</div></div>
+            <div class="txtsmall brr">снятие, аппаратный/комбинированный маникюр, выравнивание базой, покрытие под кутикулу гель-лаком LUXIO</div>
+            <div class="line"></div>
+        </div>
+
+        <div class="cont1">
+            <div class="cont">
+            <div class="txtbig ttxbig">Комплекс маникюр</div>
+            <div class="txtbig ">2450</div></div>
+            <div class="txtsmall brr">снятие, аппаратный/комбинированный маникюр, выравнивание базой, покрытие под кутикулу гель-лаком LUXIO</div>
+            <div class="line"></div>
+        </div>
+
+        <div class="cont1">
+            <div class="cont">
+            <div class="txtbig ttxbig">Комплекс маникюр</div>
+            <div class="txtbig ">2450</div></div>
+            <div class="txtsmall brr">снятие, аппаратный/комбинированный маникюр, выравнивание базой, покрытие под кутикулу гель-лаком LUXIO</div>
+            <div class="line"></div>
+        </div>
+
+        <div class="cont1">
+            <div class="cont">
+            <div class="txtbig ttxbig">Комплекс маникюр</div>
+            <div class="txtbig ">2450</div></div>
+            <div class="txtsmall brr">снятие, аппаратный/комбинированный маникюр, выравнивание базой, покрытие под кутикулу гель-лаком LUXIO</div>
+            <div class="line"></div>
+        </div>
+    </div>
+    </section>
+
+
+
+   <section class="space4">
+        <div class="item"> 
+        <div class="txtbig1 pad">НАШИ РАБОТЫ</div>
+
+        <div class="flex-conteiner2">
+            <div><img class="nailpp" src="./загруженное (2) 1.png" width="300px" height="300px"></div>
+            <div><img class="nailpp" src="./image 2.png" width="300px" height="300px"></div>
+        </div>
+
+        <div class="flex-conteiner2">
+            <div class="nails"><img class="nailpp" src="./image 3.png" width="300px" height="300px"></div>
+            <div><img class="nailpp" src="./image 5.png" width="300px" height="300px"></div>
+        </div>
+
+        <p class="txtsmall postxtsmall hov">Смотреть еще ></p>
+
+        <div class="blur1 blurpos1"></div>
+    </div>
+    </section>
+
+
+
+
+     <section class="space4">
+        <div class="item"> 
+        <div class="txtbig1 pad">ПОЧЕМУ МЫ?<div class="blur1 blurpos2"></div></div>
+
+
+        <div class="teiner2">
+        <div class="cont11">
+            <div class="picmidl"><img src="./Mask group.png"></div>
+            <p class="txtbig posmidl">стирильность</p>
+            <p class="txtsmall posmidltxtsmall">100% стерильность и одноразовые наборы</p>
+        </div>
+
+          <div class="cont11">
+            <div class="picmidl"><img src="./Mask group (1).png"></div>
+            <p class="txtbig posmidl">стирильность</p>
+            <p class="txtsmall posmidltxtsmall">100% стерильность и одноразовые наборы</p>
+        </div></div>
+
+        
+        <div class="teiner2">
+
+        <div class="cont11">
+            <div class="picmidl"><img src="./Mask group (2).png"></div>
+            <p class="txtbig posmidl">стирильность</p>
+            <p class="txtsmall posmidltxtsmall">100% стерильность и одноразовые наборы</p>
+        </div>
+
+        <div class="cont11">
+            <div class="picmidl"><img src="./Group 11.png"></div>
+            <p class="txtbig posmidl">стирильность</p>
+            <p class="txtsmall posmidltxtsmall">100% стерильность и одноразовые наборы</p>
+        </div></div>
+    </div> 
+    </div>
+    </section>
+
+
+
+    <section class="space4">
+        <div class="item"> 
+        <div class="txtbig1 pad">КОНТАКТЫ</div>
+
+
+<div class="flex-cont2">
+    <div>
+        <p class="txtbig">ТЕЛЕФОН:</p>
+        <p class="txtsmall possmall">8 800 998 78 75</p>
+    </div>
+
+    <div>
+        <p class="txtbig">EMAIL:</p>
+        <p class="txtsmall possmall">mlao@gmail.com</p>
+    </div>
+
+    <div>
+        <p class="txtbig">АДРЕС:</p>
+        <p class="txtsmall possmall">Cущевский вал 32</p>
+    </div>
+
+    <div class="map">
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aecd07eb9f7a3590b27493a75dfc4ac4cbf96494b5e50fbb224fe2d379ab76253&amp;width=350&amp;height=350&amp;lang=ru_RU&amp;scroll=true"></script>
+    </div>
+</div>
+
+
+<div class="flex-conteiner4"><div class="flex-conteiner3">
+            <p class="txtbig pos pop2">MLAO</p>
+            <p class="txtsmall poslast">О нас</p>
+            <p class="txtsmall poslast">Отзывы</p>
+            <p class="txtsmall poslast">Услуги</p>
+            <div class="socialnetwork paddsoc"><img src="./Mask group — копия.png" width="30px" height="30px"></div>
+            <div class="socialnetwork"><img src="./Mask group (2) — копия.png" width="30px" height="30px"></div>
+            <div class="socialnetwork"><img src="./Mask group (1) — копия.png" width="30px" height="30px"></div>
+        </div> </div>
+
+
+        <div class="flex-conteiner4"><p class="txtsmall pops">CREATIVE MANICURE STUDIO</p>  </div>
+        
+        <div class="flex-conteiner4">
+            <p class="txtsmall">2024 Все права защищены</p>
+            <p class="txtsmall">Политика конфиденциальности</p>
+        </div>
+    
+        <div class="blur1 blurpos3"></div>
+    </section> 
+</body>
+</html>
